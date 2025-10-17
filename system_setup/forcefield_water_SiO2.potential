@@ -1,0 +1,93 @@
+# Original model from Horn et al, J Chem Phys 120: 9665 (2004)
+# Charges and geometry are specified in the "data." file.
+
+# 1 - Si bulk
+# 2 - O bulk
+# 3 - O (Si-(OH)2)
+# 4 - H (Si-(OH)2)
+# 5 - Si (Si-(CH3)2)
+# 6 - C (Si-(CH3)2)
+# 7 - H (Si-(CH3)2)
+# 8 - O (H2O)
+# 9 - H (H2O)
+
+mass 1 28.0855 # Si
+mass 2 15.9994 # O
+mass 3 15.9994 # O
+mass 4 1.00794 # H 
+mass 5 28.0855 # Si
+mass 6 12.011  # C
+mass 7 1.00794 # H 
+mass 8 15.9994 # O
+mass 9 1.00794 # H
+
+pair_style lj/cut/coul/long 10.0 
+pair_modify tail yes
+kspace_style pppm 1.0e-5
+
+pair_coeff 1 1  0.00000007984697   3.302027      # Si - Si
+pair_coeff 1 2  0.000023201500     3.233784      # Si - O (bulk)
+pair_coeff 1 3  0.000023201500     3.233784      # Si - O (Si-(OH)2)
+pair_coeff 1 4  0.0                0.0           # Si - H (Si-(OH)2)
+pair_coeff 1 5  0.00000007984697   3.302027      # Si - Si (Si-(CH3)2)
+pair_coeff 1 6  0.000015117        3.40101       # Si - C (Si-(CH3)2)
+pair_coeff 1 7  0.00001019189      2.9010135     # Si - H (Si-(CH3)2)
+pair_coeff 1 8  0.000023201500     3.233784      # Si - O (H2O)
+pair_coeff 1 9  0.0                0.0           # Si - H (H2O)
+pair_coeff 2 2  0.00674176606      3.165541	 # O(bulk) - O(bulk)
+pair_coeff 2 3  0.00674176606      3.165541      # O(bulk) - O (Si-(OH)2)
+pair_coeff 2 4  0.0                0.0           # O(bulk) - H (Si-(OH)2)
+pair_coeff 2 5  0.000023201500     3.233784      # O(bulk) - Si (Si-(CH3)2)
+pair_coeff 2 6  0.004392624        3.332770      # O(bulk) - C (Si-(CH3)2)
+pair_coeff 2 7  0.0029615065       2.832770      # O(bulk) - H (Si-(CH3)2)
+pair_coeff 2 8  0.00674176606      3.165541      # O(bulk) - O (H2O)
+pair_coeff 2 9  0.0                0.0           # O(bulk) - H (H2O)
+pair_coeff 3 3  0.00674176606      3.165541	 # O (Si-(OH)2) - O (Si-(OH)2)
+pair_coeff 3 4  0.0                0.0           # O (Si-(OH)2) - H (Si-(OH)2)
+pair_coeff 3 5  0.000023201500     3.233784      # O (Si-(OH)2) - Si (Si-(CH3)2)
+pair_coeff 3 6  0.004392624        3.332770      # O (Si-(OH)2) - C (Si-(CH3)2)
+pair_coeff 3 7  0.0029615065       2.832770      # O (Si-(OH)2) - H (Si-(CH3)2)
+pair_coeff 3 8  0.00674176606      3.165541      # O (Si-(OH)2) - O (H2O)
+pair_coeff 3 9  0.0                0.0           # O (Si-(OH)2) - H (H2O)
+pair_coeff 4 4  0.0                0.0           # H (Si-(OH)2) - H (Si-(OH)2)
+pair_coeff 4 5  0.0                0.0           # H (Si-(OH)2) - Si (Si-(CH3)2)
+pair_coeff 4 6  0.0                0.0           # H (Si-(OH)2) - C (Si-(CH3)2)
+pair_coeff 4 7  0.0                0.0           # H (Si-(OH)2) - H (Si-(CH3)2)
+pair_coeff 4 8  0.0                0.0           # H (Si-(OH)2) - O (H2O)
+pair_coeff 4 9  0.0                0.0           # H (Si-(OH)2) - H (H2O)
+pair_coeff 5 5  0.00000007984697   3.302027      # Si (Si-(CH3)2) - Si (Si-(CH3)2)
+pair_coeff 5 6  0.000015117        3.40101       # Si (Si-(CH3)2) - C (Si-(CH3)2)
+pair_coeff 5 7  0.00001019189      2.9010135     # Si (Si-(CH3)2) - H (Si-(CH3)2)
+pair_coeff 5 8  0.000023201500     3.233784      # Si (Si-(CH3)2) - O (H2O)
+pair_coeff 5 9  0.0                0.0           # Si (Si-(CH3)2) - H (H2O)
+pair_coeff 6 6  0.002862031        3.5           # C (Si-(CH3)2) - C (Si-(CH3)2)
+pair_coeff 6 7  0.001929581        3.0           # C (Si-(CH3)2) - H (Si-(CH3)2)
+pair_coeff 6 8  0.004392624        3.33277       # C (Si-(CH3)2) - O (H2O)
+pair_coeff 6 9  0.0                0.0           # C (Si-(CH3)2) - H (H2O)
+pair_coeff 7 7  0.001300923        2.5           # H (Si-(CH3)2) - H (Si-(CH3)2)
+pair_coeff 7 8  0.0029615065       2.832770      # H (Si-(CH3)2) - O (H2O)
+pair_coeff 7 9  0.0                0.0           # H (Si-(CH3)2) - H (H2O)
+pair_coeff 8 8  0.00674176606      3.165541      # O (H2O) - O (H2O)
+pair_coeff 8 9  0.0                0.0           # O (H2O) - H (H2O)
+pair_coeff 9 9  0.0                0.0           # H (H2O) - H (H2O)
+
+
+
+bond_style harmonic
+bond_coeff 1 24.0402 1.0     #O  - H   [Si-(OH)2]
+bond_coeff 2 8.67666 1.85    #Si - C   [Si-(CH3)2]
+bond_coeff 3 15.1323 1.09    #C  - H   [Si-(CH3)2]
+bond_coeff 4 0.0     1.0     #O - H    [H2O]
+
+angle_style harmonic
+angle_coeff 1 1.3014985 109.47 #Si-O-H [Si-(OH)2]
+angle_coeff 2 2.169164 109.50 #Si-C-H [Si-(CH3)2]
+angle_coeff 3 1.4310155 107.8  #H-C-H  [Si-(CH3)2]
+angle_coeff 4 2.602997 110.0  #C-Si-C [Si-(CH3)2]
+angle_coeff 5 0.0      109.47 #H-O-H  [H2O]
+
+
+
+
+
+ 
